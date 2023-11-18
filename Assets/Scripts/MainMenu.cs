@@ -42,6 +42,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("PVE Game");
     }
+
+    public void PvprPlay()
+    {
+        SceneManager.LoadScene("PVP R Game");
+    }
     public void Back()
     {
         playButton.SetActive(true);
