@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 181222707}
   startSpeed: 5
-  extraSpeed: 1
+  extraSpeed: 2
   startPlayer1: 1
 --- !u!114 &181222710
 MonoBehaviour:
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 487019224}
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1203614132}
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!1 &1310346137
 GameObject:
   m_ObjectHideFlags: 0

@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 134183325}
   - component: {fileID: 134183328}
   - component: {fileID: 134183327}
+  - component: {fileID: 134183329}
+  - component: {fileID: 134183330}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -256,10 +258,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: ba4e370bb4bb046439096ab35851654d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -271,6 +273,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &134183329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134183322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b9c226e179cf34c821c18fef16a389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 134183328}
+  startSpeed: 5
+  extraSpeed: 1
+  startPlayer1: 1
+--- !u!114 &134183330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134183322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e8c9b507b165f498f49e8340e2e599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballMovement: {fileID: 134183329}
+  scoreManager: {fileID: 505445882}
 --- !u!1 &165189536
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +364,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -474,6 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505445881}
+  - component: {fileID: 505445882}
   m_Layer: 0
   m_Name: Borders
   m_TagString: Untagged
@@ -500,6 +533,21 @@ Transform:
   - {fileID: 666190040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505445882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505445880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de4800ebf00f1b489499da2cb2fd03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScorePVPR: 3
+  player1TextPVPR: {fileID: 797939166}
+  player2TextPVPR: {fileID: 917512393}
 --- !u!1 &554800927
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +957,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

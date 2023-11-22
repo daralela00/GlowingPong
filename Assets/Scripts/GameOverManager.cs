@@ -12,11 +12,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(ScoreManagerPVP.winnerCheck == 1 || ScoreManagerPVE.winnerCheckPVE == 1)
+        if(ScoreManagerPVP.winnerCheck == 1 || ScoreManagerPVE.winnerCheckPVE == 1 || ScoreManagerPVPR.winnerCheckPVPR == 1)
         {
             goText.text = "Player 1 wins!";
         }
-        else if(ScoreManagerPVP.winnerCheck == 2 || ScoreManagerPVE.winnerCheckPVE == 2)
+        else if(ScoreManagerPVP.winnerCheck == 2 || ScoreManagerPVE.winnerCheckPVE == 2 || ScoreManagerPVPR.winnerCheckPVPR == 2)
         {
             goText.text = "Player 2 wins!";
         }
@@ -26,6 +26,13 @@ public class NewBehaviourScript : MonoBehaviour
             goText.color = Color.red;
             replayButton.GetComponent<Image>().color = Color.red;
             mainMenuButton.GetComponent<Image>().color = Color.red;
+        }
+
+        if(ScoreManagerPVPR.winnerCheckPVPR == 1 || ScoreManagerPVPR.winnerCheckPVPR == 2)
+        {
+            goText.color = Color.blue;
+            replayButton.GetComponent<Image>().color = Color.blue;
+            mainMenuButton.GetComponent<Image>().color = Color.blue;
         }
     }
 
@@ -50,6 +57,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         ScoreManagerPVP.winnerCheck = -1;
         ScoreManagerPVE.winnerCheckPVE = -1;
+        ScoreManagerPVPR.winnerCheckPVPR = -1;
         SceneManager.LoadScene("Main Menu");
     }
 }
